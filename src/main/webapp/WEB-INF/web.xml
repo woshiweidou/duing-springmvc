@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:application-context.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>springMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:dispatcher-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springMVC</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+<!--    <filter>-->
+<!--        <filter-name>aaa</filter-name>-->
+<!--        <filter-class>com.lu.filter.TestFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>aaa</filter-name>-->
+<!--        <url-pattern>/show</url-pattern>-->
+<!--    </filter-mapping>-->
+<!--    <filter>-->
+<!--        <filter-name>one</filter-name>-->
+<!--        <filter-class>com.lu.filter.FilterOne</filter-class>-->
+<!--    </filter>-->
+
+<!--    <filter-mapping>-->
+<!--        <filter-name>one</filter-name>-->
+<!--        <url-pattern>/show</url-pattern>-->
+<!--    </filter-mapping>-->
+
+<!--    <filter-mapping>-->
+<!--    <filter-name>two</filter-name>-->
+<!--    <url-pattern>/show</url-pattern>-->
+<!--    </filter-mapping>-->
+
+
+<!--    <filter>-->
+<!--        <filter-name>two</filter-name>-->
+<!--        <filter-class>com.lu.filter.FilterTwo</filter-class>-->
+<!--    </filter>-->
+    
+<!--    <listener>-->
+<!--        <listener-class>com.lu.springLearn.listener.TestRequestListener</listener-class>-->
+<!--    </listener>-->
+<!--    <listener>-->
+<!--        <listener-class>com.lu.springLearn.listener.TestSessionListener</listener-class>-->
+<!--    </listener>-->
+
+</web-app>
